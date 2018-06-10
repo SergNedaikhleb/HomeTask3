@@ -37,14 +37,16 @@ public class homeTask3 {
        // WebElement Catalog = new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfElementLocated(By.id("subtab-AdminCatalog")));
         WebElement CatalOg = driver.findElement(By.id("subtab-AdminCatalog"));
         CatalOg.click();
-        driver.get("http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0/index.php?controller=AdminCategories&token=795a6350b3a0f87af2a165b4c1a34372");
+        //driver.get("httpategories&token=795a6350b3a0f87af2a165b4c1a34372");
+        WebElement Category = driver.findElement(By.xpath("/html/body/nav/ul/li[4]/ul/li[2]/a"));
+        Category.click();
         WebElement add = driver.findElement(By.id("page-header-desc-category-new_category"));
         add.click();
         WebElement name = driver.findElement(By.id("name_1"));
         name.sendKeys("TestCategory");
         WebElement save = driver.findElement(By.id("category_form_submit_btn"));
         save.submit();
-        WebElement succes  = driver.findElement(By.cssSelector("#content > div:nth-child(4) > div > button"));
+        WebElement succes  = driver.findElement(By.xpath("//*[@id=\"content\"]/div[3]/div/button"));
         succes.click();
         WebElement backtolist = driver.findElement(By.id("desc-category-back"));
         backtolist.click();
